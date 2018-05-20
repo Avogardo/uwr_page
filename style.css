@@ -42,14 +42,21 @@ header {
 h1 {
     position: absolute;
     color: #ffffff;
-    /*font-family: myFirstFont;*/
+    /* font-family: myFirstFont; */
     font-family: Corbel;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
 }
 
 .logo {
+    width: 300px;
+    height: auto;
+    margin-top: 22px;
 }
 
 .arrow-image {
@@ -59,4 +66,11 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     bottom: 15px;
+    cursor: pointer;
+    animation: arrowAnimation 2s ease infinite;
+}
+@keyframes arrowAnimation {
+    0% { bottom: 15px }
+    50% { bottom: 13px }
+    100% { bottom: 15px }
 }
