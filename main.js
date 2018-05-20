@@ -19,12 +19,13 @@ function init() {
 	container = document.createElement('div');
 	const container3d = document.getElementsByClassName('container-3d')[0];
 	container3d.appendChild(container);
+	console.log(window.innerWidth);
 	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
 	camera.position.z = 100;
 	scene = new THREE.Scene();
 	renderer = new THREE.CanvasRenderer({ alpha: true });
 	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( window.innerWidth - 17, window.innerHeight );
 	container.appendChild( renderer.domElement );
 	// particles
 	var PI2 = Math.PI * 2;
@@ -63,7 +64,7 @@ function onWindowResize() {
 	windowHalfY = window.innerHeight / 2;
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( window.innerWidth - 17, window.innerHeight );
 }
 //
 function onDocumentMouseMove(event) {

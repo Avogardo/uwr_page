@@ -40,15 +40,23 @@ header {
 }
 
 h1 {
+    position: absolute;
     color: #ffffff;
-    font-family: myFirstFont;
-    /*font-family: Corbel;*/
+    /*font-family: myFirstFont;*/
+    font-family: Corbel;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .logo {
 }
 
 .arrow-image {
+    position: absolute;
     width: 49px;
     height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
 }
