@@ -130,3 +130,29 @@ a:hover:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
+
+.title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.parallax {
+    font-size: 200%;
+    height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+.parallax-layer {
+    padding: 500px 0;
+    position: absolute;
+}
+.parallax-layer-base {
+    transform: translateZ(0);
+}
+.parallax-layer-back {
+    transform: translateZ(-1px);
+}
