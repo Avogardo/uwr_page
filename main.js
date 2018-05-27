@@ -5,11 +5,23 @@ SEPARATION = 200,
 AMOUNTX = 10,
 AMOUNTY = 10,
 camera, scene, renderer;
+isAfterAnimation = false;
 
 
 document.addEventListener('DOMContentLoaded', () => {
 	init();
 	animate();
+
+    // var myVar = setInterval(() => {
+    //   x1 -= 1;
+    //   y1 -= 1;
+    //
+    //   if (x1 === 0 || x1 === 70) {
+    //     clearInterval(myVar);
+    //     setTimeout(function(){ isAfterAnimation = true; }, 1000);
+    //
+    //   }
+    // }, 1);
 });
 
 
@@ -90,9 +102,18 @@ function animate() {
 	requestAnimationFrame( animate );
 	render();
 }
+
+x1 = 450;
+y1 = 450;
 function render() {
-	camera.position.x += ( mouseX - camera.position.x ) * .05;
-	camera.position.y += ( - mouseY + 200 - camera.position.y ) * .05;
+  if (!isAfterAnimation) {
+    camera.position.x += ( mouseX - camera.position.x ) * .05;
+    camera.position.y += ( - mouseY + 200 - camera.position.y ) * .05;
+  } else {
+    camera.position.x = x1;
+    camera.position.y = y1;
+  }
+
 	camera.lookAt( scene.position );
 	renderer.render( scene, camera );
 }
